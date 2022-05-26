@@ -21,7 +21,8 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.DateTimeExtension
             var diffday = timeDiff.Days > 0 ? $"{timeDiff.Days} {day} " : "";
             var diffhour = timeDiff.Hours > 0 ? $"{timeDiff.Hours} {hour} " : "";
             var diffminute = timeDiff.Minutes > 0 ? $"{timeDiff.Minutes} {minute} " : "";
-            var lastWord = difference.TotalMilliseconds > 0 ? "ago!" : "after!";
+            var lastWord = (diffday=="" && diffhour == "" && diffminute == "")
+                    ? "Current Time!" : (difference.TotalMilliseconds > 0 ? "Ago!" : "After!");
 
             //return the result string after combine them
             return builder.Append(diffday)
