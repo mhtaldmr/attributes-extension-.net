@@ -10,11 +10,11 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Controllers
     [ApiController]
     public class CoffeesController : ControllerBase
     {
-        private readonly ICoffeeMaker _coffeeMaker;
+        private readonly IWhiteChocoCoffeeMaker _whiteChocoCoffeeMaker;
 
-        public CoffeesController(ICoffeeMaker coffeeMaker)
+        public CoffeesController(IWhiteChocoCoffeeMaker whiteChocoCoffeeMaker)
         {
-            _coffeeMaker = coffeeMaker;
+            _whiteChocoCoffeeMaker = whiteChocoCoffeeMaker;
         }
 
 
@@ -22,17 +22,15 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Controllers
         public IActionResult GetMakeCoffee()
         {
             var builder = new StringBuilder();
-            
-            var whiteChocoCoffee = _coffeeMaker as IWhiteChocoCoffeeMaker;
-            //Optionally we can use this 
-            //var result = ((IAmericanoCoffeeMaker)_coffeeMaker).RemoveSugar;
-            
-            builder.Append(whiteChocoCoffee.AddChoco())
-                   .Append(whiteChocoCoffee.AddSugar())
-                   .Append(whiteChocoCoffee.MakeCoffee())
-                   .ToString();
 
-            return Ok(builder);
+            var result = builder.Append(_whiteChocoCoffeeMaker.AddChoco()).AppendLine()
+                                .Append(_whiteChocoCoffeeMaker.AddSugar()).AppendLine()
+                                .Append(_whiteChocoCoffeeMaker.MakeCoffee())
+                                .ToString();
+
+            Console.WriteLine(result);
+
+            return Ok(result);
         }
 
         

@@ -6,7 +6,7 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.SolidPrinciples
     {
         public string MakeCoffee()
         {
-            return "Making the coffee";
+            return "Making the coffee!! Please Wait!..";
         }
     }
 }
