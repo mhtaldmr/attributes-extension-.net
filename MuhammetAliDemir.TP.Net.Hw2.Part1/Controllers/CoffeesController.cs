@@ -18,7 +18,7 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Controllers
         }
 
 
-        [HttpGet("white-choco")]
+        [HttpGet("coffee-maker")]
         public IActionResult GetMakeCoffee()
         {
             var builder = new StringBuilder();
