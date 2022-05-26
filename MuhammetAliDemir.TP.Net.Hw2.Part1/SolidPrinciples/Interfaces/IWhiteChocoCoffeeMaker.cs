@@ -2,7 +2,7 @@
 {
     public interface IWhiteChocoCoffeeMaker : ICoffeeMaker
     {
-        void AddChoco();
-        void AddSugar();
+        string AddChoco();
+        string AddSugar();
     }
 }
