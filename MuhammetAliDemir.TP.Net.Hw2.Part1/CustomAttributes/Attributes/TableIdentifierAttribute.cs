@@ -3,7 +3,7 @@
     [AttributeUsage(AttributeTargets.Class)]
     public class TableIdentifierAttribute : Attribute
     {
-        public string Name { get; set; }
+        public string Name { get; }
 
         public TableIdentifierAttribute(string name)
         {

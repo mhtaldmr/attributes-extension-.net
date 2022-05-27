@@ -18,7 +18,7 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Attributes
             var attrTableName = type.GetCustomAttribute<TableIdentifierAttribute>().Name.ToString();
 
             //Adding a table name checker for Escaping from Turkish Characters
-            var re = new Regex(@"^[a-zA-Z]*$");
+            var re = new Regex(@"^[a-zA-Z0-9]*$");
             if( !re.IsMatch(attrTableName) )
                 throw new CustomAttributeFormatException(attrTableName+ " is NOT Valid Table Name!");
 

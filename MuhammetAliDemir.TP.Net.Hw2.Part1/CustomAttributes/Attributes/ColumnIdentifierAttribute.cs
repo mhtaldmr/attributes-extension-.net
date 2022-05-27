@@ -3,9 +3,9 @@
     [AttributeUsage(AttributeTargets.Property)]
     public class ColumnIdentifierAttribute : Attribute
     {
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public bool IsRequired { get; set; }
+        public string Name { get; }
+        public string Type { get; }
+        public bool IsRequired { get; }
 
         public ColumnIdentifierAttribute(string name, string type, bool isRequired)
         {
