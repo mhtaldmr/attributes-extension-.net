@@ -3,6 +3,6 @@
     public interface IAmericanoCoffeeMaker : ICoffeeMaker
     {
         void AddExtraEspresso();
-        void RemoveSugar();
+        void AddHotWater();
     }
 }

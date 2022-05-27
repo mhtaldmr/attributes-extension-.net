@@ -2,6 +2,7 @@
 using MuhammetAliDemir.TP.Net.Hw2.Part1.Entity;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Attributes
 {
@@ -15,6 +16,11 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Attributes
             //TABLE ATTRIBUTES
             // Taking the table name from Class
             var attrTableName = type.GetCustomAttribute<TableIdentifierAttribute>().Name.ToString();
+
+            //Adding a table name checker for Escaping from Turkish Characters
+            var re = new Regex(@"^[a-zA-Z]*$");
+            if( !re.IsMatch(attrTableName) )
+                throw new CustomAttributeFormatException(attrTableName+ " is NOT Valid Table Name!");
 
 
             //COLUMN ATTRIBUTES
