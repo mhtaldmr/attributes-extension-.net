@@ -38,12 +38,14 @@ To run the project:
 
 - **Usage  of Attributes**
     -  It will just return of the table informations.
+    -  *.../attributes* end point will be the target. 
 - **Usage  of DateTime**
     -  You need to enter a valid Date like:   ***DD/MM/YYYY  HH:MM:SS***
+    -  *.../datetimes?time={value}* end point will be the target.
 - **Usage  of Coffee Interface**
     -  It will just return of the Sweet Coffee recipe informations.
-    - For Bitter recipe you need to change implementation on Program.cs
- 
+    - For Bitter recipe you need to change implementation of Interface on Program.cs
+    - *.../coffees/coffee-maker* will be the target.
 
 ## Implementations
  **1. Extension Example**
