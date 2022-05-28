@@ -8,8 +8,11 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Attributes
 {
     public class ScriptGenerator
     {
-        public static string Generate(Student student)
+        public static string Generate(object student)
         {
+            if (student is null)
+                throw new ArgumentNullException(nameof(student));
+
             var builder = new StringBuilder();
             Type type = typeof(Student);
 
@@ -19,11 +22,11 @@ namespace MuhammetAliDemir.TP.Net.Hw2.Part1.Attributes
 
             //Adding a table name checker for Escaping from Turkish Characters
             var re = new Regex(@"^[a-zA-Z0-9]*$");
-            if( !re.IsMatch(attrTableName) )
-                throw new CustomAttributeFormatException(attrTableName+ " is NOT Valid Table Name!");
+            if (!re.IsMatch(attrTableName))
+                throw new CustomAttributeFormatException(attrTableName + " is NOT Valid Table Name!");
 
 
-            //COLUMN ATTRIBUTES
+            //COLUMN ATTRIBUTES //properties CAN BE taken by foreach block instead of one by one!!
             //Taking the Id field Property Attributes
             var attrId = type.GetProperty(nameof(Student.Id)).GetCustomAttribute<ColumnIdentifierAttribute>();
 
