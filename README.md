@@ -1,4 +1,4 @@
-# TP .Net Week 2 Part 1
+# Attributes - Extensions - Solid Principles
 
 This project is an example of using  Extension Methods, Attribute Usage and Solid Principles Usage.
 
