@@ -16,11 +16,11 @@ This project is an example of using  Extension Methods, Attribute Usage and Soli
 
 To get the project :
 ```
-    git clone https://github.com/186-Teleperformans-Net-Bootcamp/hafta2-1-mhtaldmr.git
+    git clone https://github.com/mhtaldmr/attributes-extension-.net.git
 ```
 To reach the project folder :
 ```
-    cd hafta2-1-mhtaldmr 
+    cd attributes-extension-.net 
     cd MuhammetAliDemir.TP.Net.Hw2.Part1
 ```
 To run the project:
